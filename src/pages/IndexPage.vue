@@ -16,12 +16,13 @@ import { storeToRefs } from "pinia";
 
 const terminalRef = ref();
 
+//捕获输入文本
 const onSubmitCommand = async (inputText: string) => {
   if (!inputText) {
     return;
   }
   const terminal = terminalRef.value.terminal;
-  // 将命令传给命令系统
+  // 将命令和终端对象传给命令系统
   await doCommandExecute(inputText, terminal);
 };
 

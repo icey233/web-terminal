@@ -1,19 +1,21 @@
+<!-- 终端组件 -->
 <template>
-  //背景页面
+  <!-- 背景页面 -->
   <div
     class="yu-terminal-wrapper"
     :style="wrapperStyle"
     @click="handleClickWrapper"
   >
+    <!-- 终端核心 -->
     <div ref="terminalRef" class="yu-terminal" :style="mainStyle">
-      <!-- 命令列表 -->
+      <!-- 命令输出 -->
       <a-collapse
         v-model:activeKey="activeKeys"
         :bordered="false"
         expand-icon-position="right"
       >
         <template v-for="(output, index) in outputList" :key="index">
-          <!-- 折叠 -->
+          <!-- 命令输出可折叠情况 -->
           <a-collapse-panel
             v-if="output.collapsible"
             :key="index"
@@ -30,10 +32,11 @@
               :key="idx"
               class="terminal-row"
             >
+              <!-- 调用输出组件并传递数据 -->
               <content-output :output="result" />
             </div>
           </a-collapse-panel>
-          <!-- 不折叠 -->
+          <!-- 命令输出不折叠情况 -->
           <template v-else>
             <!-- 输出命令及结果-->
             <template v-if="output.type === 'command'">
@@ -175,17 +178,21 @@ const { hint, setHint, debounceSetHint } = useHint();
  */
 const doSubmitCommand = async () => {
   isRunning.value = true;
+  // 命令提示为空
   setHint("");
   let inputText = inputCommand.value.text;
-  // 执行某条历史命令
+  // 根据历史记录命令的参数执行某条历史命令
   if (inputText.startsWith("!")) {
     const commandIndex = Number(inputText.substring(1));
+    // 拿到需要执行的历史命令
     const command = commandList.value[commandIndex - 1];
     if (command) {
       inputText = command.text;
     }
   }
   // 执行命令
+
+  //存储命令结果
   const newCommand: CommandOutputType = {
     text: inputText,
     type: "command",
@@ -193,7 +200,7 @@ const doSubmitCommand = async () => {
   };
   // 记录当前命令，便于写入结果
   currentNewCommand = newCommand;
-  // 执行命令
+  // 命令系统执行命令
   await props.onSubmitCommand?.(inputText);
   // 添加输出（为空也要输出换行）
   outputList.value.push(newCommand);

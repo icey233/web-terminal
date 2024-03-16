@@ -1,3 +1,4 @@
+//命令注册
 import { CommandType } from "./command";
 import searchCommands from "./commands/search/searchCommands";
 import gotoCommand from "./commands/gotoCommand";
@@ -58,6 +59,10 @@ const commandList: CommandType[] = [
 
 /**
  * 命令字典
+ * k-v形式
+ * {
+ *    k : v
+ * }
  */
 const commandMap: Record<string, CommandType> = {};
 

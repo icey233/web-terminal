@@ -21,7 +21,7 @@ export const doCommandExecute = async (
   if (!text) {
     return;
   }
-  // 解析文本，得到命令
+  // 解析文本，匹配命令
   const command: CommandType = getCommand(text, parentCommand);
   if (!command) {
     terminal.writeTextErrorResult("找不到命令");
@@ -54,6 +54,7 @@ const getCommand = (text: string, parentCommand?: CommandType): CommandType => {
   let func = text.split(" ", 1)[0];
   // 大小写无关
   func = func.toLowerCase();
+  // 取出命令集
   let commands = commandMap;
   // 有父命令，则从父命令中查找
   if (

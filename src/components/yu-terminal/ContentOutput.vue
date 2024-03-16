@@ -1,13 +1,14 @@
 //输出命令结果
 <template>
   <div class="content-output">
+    <!-- 用户输入文本 -->
     <template v-if="output.type === 'text'">
       <a-tag v-if="outputTagColor" :color="outputTagColor"
         >{{ output.status }}
       </a-tag>
       <span v-if="output.type === 'text'" v-html="smartText(output.text)" />
     </template>
-    //自定义组件
+    <!-- 用户输入组件 -->
     <component
       :is="output.component"
       v-if="output.type === 'component'"
@@ -25,6 +26,7 @@ interface OutputProps {
   output: OutputType;
 }
 
+// 终端传递的命令解析之后的输出结果
 const props = defineProps<OutputProps>();
 const { output } = toRefs(props);
 const outputTagColor = computed((): string => {
