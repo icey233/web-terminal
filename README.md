@@ -1,68 +1,3 @@
-# YuIndex - 极客范儿的浏览器主页
-
-> Coolest browser index for geeks! 
-> 
-> 前后端全栈项目 By [程序员鱼皮](https://docs.qq.com/doc/DUFFRVWladXVjeUxW)
-
-
-
-在线体验：[http://yuindex.yupi.icu](http://yuindex.yupi.icu)
-
-视频演示：[https://www.bilibili.com/video/BV19B4y1Y7m8/](https://www.bilibili.com/video/BV19B4y1Y7m8/)
-
-![YuIndex 定制你的最强主页](./doc/assets/docpic1.png)
-
-![YuIndex 用命令来控制网页](./doc/assets/docpic2.png)
-
-⭐️ 我在自己的 [编程知识星球](https://yupi.icu) 内花 4 个小时直播给大家详细解读了这个项目的创作思路 + 技术选型 + 系统设计 + 源码解读 + 思路扩展 + 简历亮点分享，如果你希望把这个项目写到简历上、或者深入学习，[欢迎加入我的星球观看](https://yupi.icu/%E6%98%9F%E7%90%83%E9%A1%B9%E7%9B%AE/Web%20%E7%BB%88%E7%AB%AF%E9%A1%B9%E7%9B%AE.html) 。
-
-
-## YuIndex 是什么？
-
-一个很特别的浏览器主页，支持使用输入命令的方式来操作，目标是帮你在一个 web 终端中高效完成所有的事情！（all in one）
-
-此外，它也是一个功能强大的 web 终端组件。开发者可以在它的基础上定制自己的 web 终端，并且可以在终端中集成任何内容！
-
-> 如果你是一名程序员，相信你会爱上它~
-
-
-
-你可以将音乐、游戏，甚至可以将自己的偶像封装到主页~
-
-![](./doc/assets/docpic3.png)
-
-![](./doc/assets/docpic4.png)
-
-
-
-### 1 分钟上手使用
-
-请打开网站：https://yuindex.com
-
-然后在网站内依次输入以下命令：
-
-```bash
-baidu 程序员鱼皮
-github yuindex
-goto yupi.icu
-todo
-music 坤坤
-moyu
-按键 Ctrl + O 触发折叠, 再按可展开
-history
-按键 Ctrl + L 清屏
-```
-
-使用  `help 命令英文名` 可以查询某命令的具体用法，如：`help search` 。
-
-使用 `shortcut` 可以查看所有的快捷键。
-
-> 完整命令用法请见：[命令手册](./doc/commands.md)
-
-尽情探索吧~
-
-
-
 
 ## 项目优势
 
@@ -284,17 +219,6 @@ history
 2. 开源的 web 终端很少，给开源贡献一份力。
 3. 帮助自己复习 Vue，突破个人系统开发设计能力的边界。
 
-
-
-### 更多讲解
-
-如果你希望获取该项目的完整详细讲解，欢迎加入 [鱼皮的编程知识星球](https://yupi.icu/) ，这是鱼皮的编程学习圈子，我会在圈子内带大家从 0 到 1 分析解读这个项目，让你也能独立做一个，项目经历 + 1。
-
-
-
-## 贡献指南
-
-欢迎各位朋友贡献代码，还请先阅读以下指南。
 
 
 

@@ -10,6 +10,7 @@ import { useTerminalConfigStore } from "../../core/commands/terminal/config/term
  */
 const useHint = () => {
   const hint = ref("");
+  // 提示的配置
   const { showHint } = useTerminalConfigStore();
 
   const setHint = (inputText: string) => {
@@ -17,6 +18,7 @@ const useHint = () => {
     if (!showHint) {
       return;
     }
+    //没有输入值
     if (!inputText) {
       hint.value = "";
       return;
@@ -24,6 +26,7 @@ const useHint = () => {
     const args = trim(inputText).split(" ");
     // 大小写无关
     let func = args[0].toLowerCase();
+    console.log(func);
     // 前缀匹配
     const likeKey = Object.keys(commandMap).filter((key) =>
       key.startsWith(func)

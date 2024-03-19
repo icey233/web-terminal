@@ -75,8 +75,9 @@
           autofocus
           @press-enter="doSubmitCommand"
         >
+          <!-- 输入前缀 -->
           <template #addonBefore>
-            <span class="command-input-prompt">{{ prompt }}</span>
+            <span class="command-input-prompt">{{ prompt }} </span>
           </template>
         </a-input>
       </div>
@@ -266,6 +267,8 @@ const wrapperStyle = computed(() => {
   return style;
 });
 
+//              ******                       终端方法                             ******
+
 /**
  * 清空所有输出
  */
@@ -415,11 +418,10 @@ onMounted(() => {
     });
   } else {
     terminal.writeTextOutput(
-      `Welcome to YuIndex, coolest browser index for geeks!` +
-        `<a href="//github.com/liyupi/yuindex" target='_blank'> GitHub Open Source</a>`
+      `Welcome to Web-terminal, coolest browser index for geeks!`
     );
     terminal.writeTextOutput(
-      `Author <a href="//docs.qq.com/doc/DUFFRVWladXVjeUxW" target="_blank">coder_yupi</a>` +
+      `Author <a href="//docs.qq.com/doc/DUFFRVWladXVjeUxW" target="_blank">Icey</a>` +
         `: please input 'help' to enjoy`
     );
     terminal.writeTextOutput("<br/>");

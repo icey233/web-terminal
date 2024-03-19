@@ -23,12 +23,15 @@ export const doCommandExecute = async (
   }
   // 解析文本，匹配命令
   const command: CommandType = getCommand(text, parentCommand);
+  //匹配失败
   if (!command) {
     terminal.writeTextErrorResult("找不到命令");
     return;
   }
-  // 解析参数（需传递不同的解析规则）
+  // 解析参数（需传递不同的解析规则)
+  //解析为js对象
   const parsedOptions = doParse(text, command.options);
+  // 用户输入的参数数组
   const { _ } = parsedOptions;
   // 有子命令，执行
   if (
@@ -64,6 +67,7 @@ const getCommand = (text: string, parentCommand?: CommandType): CommandType => {
   ) {
     commands = parentCommand.subCommands;
   }
+  // 根据用户输入 得到执行命令
   const command = commands[func];
   console.log("getCommand = ", command);
   return command;
@@ -80,7 +84,7 @@ const doParse = (
 ): getopts.ParsedOptions => {
   // 过滤掉关键词
   const args: string[] = text.split(" ").slice(1);
-  // 转换
+  // 转换的格式数组
   const options: getopts.Options = {
     alias: {},
     default: {},
@@ -128,5 +132,7 @@ const doAction = async (
     helpCommand.action(newOptions, terminal, parentCommand);
     return;
   }
+  // 命令执行
+  // 命令的执行函数被定义在命令集里
   await command.action(options, terminal);
 };

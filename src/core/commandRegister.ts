@@ -72,5 +72,6 @@ commandList.forEach((command) => {
     commandMap[name] = command;
   });
 });
+console.log(commandMap);
 
 export { commandList, commandMap };
