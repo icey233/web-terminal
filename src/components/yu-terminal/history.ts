@@ -16,10 +16,12 @@ const useHistory = (
    */
   const commandHistoryPos = ref(commandList.length);
 
+  // 历史命令列表
   const listCommandHistory = () => {
     return commandList;
   };
 
+  // 下翻
   const showNextCommand = () => {
     console.log(commandHistoryPos.value, commandList, inputCommand);
     if (commandHistoryPos.value < commandList.length - 1) {
@@ -30,7 +32,7 @@ const useHistory = (
       inputCommand.value.text = "";
     }
   };
-
+  //上翻
   const showPrevCommand = () => {
     console.log(commandHistoryPos.value, commandList, inputCommand);
     if (commandHistoryPos.value >= 1) {

@@ -26,7 +26,6 @@ const useHint = () => {
     const args = trim(inputText).split(" ");
     // 大小写无关
     let func = args[0].toLowerCase();
-    console.log(func);
     // 前缀匹配
     const likeKey = Object.keys(commandMap).filter((key) =>
       key.startsWith(func)

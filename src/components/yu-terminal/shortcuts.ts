@@ -9,8 +9,9 @@ import TerminalType = YuTerminal.TerminalType;
  * @param terminal
  */
 export const registerShortcuts = (terminal: TerminalType) => {
+  // onkeydown 事件会在用户按下一个键盘按键时发生。
   document.onkeydown = (e) => {
-    // console.log(e);
+    //console.log(e);
     let key = e.key;
     // 自动聚焦输入框
     if (key >= "a" && key <= "z" && !e.metaKey && !e.shiftKey && !e.ctrlKey) {

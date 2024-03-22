@@ -135,7 +135,7 @@ const terminalRef = ref();
 const activeKeys = ref<number[]>([]);
 // 输出列表
 const outputList = ref<OutputType[]>([]);
-// 命令列表
+// 已输入命令列表
 const commandList = ref<CommandOutputType[]>([]);
 const commandInputRef = ref();
 
@@ -165,6 +165,7 @@ const inputCommand = ref<CommandInputType>({
  */
 let currentNewCommand: CommandOutputType;
 
+//引入历史功能
 const {
   commandHistoryPos,
   showPrevCommand,
@@ -172,6 +173,7 @@ const {
   listCommandHistory,
 } = useHistory(commandList.value, inputCommand);
 
+//引入提示功能
 const { hint, setHint, debounceSetHint } = useHint();
 
 /**
@@ -410,6 +412,7 @@ const terminal: TerminalType = {
  * 只执行一次
  */
 onMounted(() => {
+  // 注册快捷键
   registerShortcuts(terminal);
   const { welcomeTexts } = configStore;
   if (welcomeTexts?.length > 0) {
