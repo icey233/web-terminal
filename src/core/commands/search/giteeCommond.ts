@@ -1,12 +1,11 @@
 import { CommandType } from "../../command";
-
 /**
- * 网易云搜索命令
+ * GitHub 搜索命令
  * @author icey
  */
-const wangyiyunCommand: CommandType = {
-  func: "wangyiyun",
-  name: "网易云搜索",
+const giteeCommand: CommandType = {
+  func: "gitee",
+  name: "gitee 搜索",
   alias: [],
   params: [
     {
@@ -27,7 +26,7 @@ const wangyiyunCommand: CommandType = {
   action(options, terminal) {
     const { _, self } = options;
     const word = _.length > 0 ? _[0] : "";
-    const targetLink = `https://music.163.com/#/search/m/?s=${word}`;
+    const targetLink = `https://gitee.com/search?q=${word}`;
     if (self) {
       window.location.href = targetLink;
     } else {
@@ -36,4 +35,4 @@ const wangyiyunCommand: CommandType = {
   },
 };
 
-export default wangyiyunCommand;
+export default giteeCommand;

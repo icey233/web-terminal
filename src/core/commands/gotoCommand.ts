@@ -3,7 +3,7 @@ import { useSpaceStore } from "./space/spaceStore";
 
 /**
  * 跳转命令
- * @author rh
+ * @author icey
  */
 export default {
   func: "goto",
@@ -35,6 +35,7 @@ export default {
     // 优先找空间条目链接
     let { getItem } = useSpaceStore();
     const item = getItem(link);
+    //查找是否是本地文件
     if (item?.link) {
       link = item?.link;
     }
